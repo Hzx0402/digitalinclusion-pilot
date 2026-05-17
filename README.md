@@ -1,58 +1,65 @@
 # Digital Inclusion Pilot - Python Learning Portfolio
 
 ## 📌 Research Topic
-
 **Digital Inclusion, Social Equity, and the Governance of the Urban Poor in Guangzhou's Smart City-Driven Regeneration**
 
-This repository documents my self-directed learning journey to acquire computational skills for my proposed PhD research under **Prof. Xiang Lv** at HKUST(GZ).
+This repository documents my Python learning journey for my proposed PhD research under **Prof. Xiang Lv** at HKUST(GZ).
 
 ---
 
-## 🛠 Technical Skills Demonstrated
+## 📊 1. Policy Analysis → Problem Statement
 
-| Skill | Application | Code File |
-| :--- | :--- | :--- |
-| Python Basics | First program, data types, loops | `test.py` |
-| Data Processing | Structuring survey data, screening logic | `screening_demo.py` |
-| Text Analysis | Policy keyword extraction, word cloud | `policy_analysis.py`, `interview_wordcloud.py` |
-| Statistical Analysis | Logistic regression, Chi-square test | `poverty_screening_validation.py` |
-| Reliability Test | Cronbach's α for Likert scale | `likert_reliability.py` |
-| Data Visualization | Boxplots, bar charts, trend charts | `likert_reliability.png`, `policy_trend_chart.png` |
+Using Python to analyze Guangzhou's urban regeneration and smart community policies across three Five-Year Plan periods (13th–15th), I found:
 
----
+| Keyword Category | 13th FYP | 14th FYP | 15th FYP | Change |
+| :--- | :--- | :--- | :--- | :--- |
+| Spatial Renewal | 32.89 | 6.44 | 1.61 | ↓ 95% |
+| Technological Empowerment | 0.00 | 7.68 | 3.33 | ↑ then ↓ |
+| Participatory Fairness | 1.53 | 0.28 | 0.14 | ↓ 91% |
+| Care for Vulnerable Groups | 0.49 | 0.56 | 1.76 | ↑ 259% |
 
-## 📊 Key Findings
-
-### 1. Poverty Screening Table Validation
-
-Validated with **200 simulated survey responses**:
-
-| Method | Result | Conclusion |
-| :--- | :--- | :--- |
-| Logistic Regression | All 4 coefficients positive | ✅ Each dimension predicts poverty |
-| Chi-square Test | p < 0.001 | ✅ Poor group has significantly lower digital skills |
-| Prediction Accuracy | 100% | ✅ Screening rule is effective |
-| Cronbach's α | 0.166 | Acceptable for multidimensional poverty index |
-
-**Conclusion**: The poverty screening table effectively identifies groups at high risk of digital exclusion.
-
-### 2. Likert Scale Reliability Test
-
-Tested on **200 simulated responses** (7 questions, 1-5 scale):
-
-| Dimension | Cronbach's α | Grade |
-| :--- | :--- | :--- |
-| Personal Barriers (3 items) | 0.782 | ✅ Good |
-| Actual Core Competencies (4 items) | 0.897 | ✅ Good |
-
-![Likert Scale Reliability](likert_reliability.png)
-
-**Conclusion**: The Likert scale reliably measures digital inclusion perception.
-
-### 3. Policy Text Analysis
-
-Analyzed Guangzhou urban renewal policy texts across three Five-Year Plan periods. Key findings show a shift from "spatial renewal" discourse to "technological empowerment" discourse.
+**The Problem**: Policy focuses more on technology but less on fair participation. At the same time, it shows more "care" for vulnerable groups without emphasizing their "participation." This raises a critical question: **Are vulnerable groups being cared for or being silenced in smart city regeneration?**
 
 ---
 
-## 📂 Repository Structure
+## ❓ 2. Research Questions
+
+| RO | Question |
+| :--- | :--- |
+| RO1 | What specific access barriers do the urban poor face when encountering and using the digital governance tools within smart regeneration projects?|
+| RO2 | What impact do digitalised governance and services have on the core capabilities of the urban poor, such as community participation, information access, and social networks? |
+| RO3 | Overall, is Guangzhou's smart regeneration model bridging or exacerbating existing social inequalities? |
+
+---
+
+## 🛠 3. Research Design
+
+### Quantitative: Survey
+
+| Tool | What it does | Validation | Code |
+| :--- | :--- | :--- | :--- |
+| **Poverty Screening** | Identify urban poor groups (4 dimensions: economy, migration, physiology, education) | Logistic regression + Chi-square + 100% accuracy | `poverty_screening_validation.py` |
+| **Likert Scale** | Measure digital inclusion perception (7 items: barriers + competencies) | Cronbach's α = 0.78 / 0.90 | `likert_reliability.py` |
+
+### Qualitative: Interview
+
+| Tool | What it does | Code |
+| :--- | :--- | :--- |
+| **Word Cloud** | Extract keywords from interview transcripts (THULAC segmentation) | `interview_wordcloud.py` |
+
+---
+
+## 📂 Repository Files
+
+| File | What it does | Which RO it supports |
+| :--- | :--- | :--- |
+| `policy_analysis.py` | Policy trend analysis (identify the problem) | Background |
+| `poverty_screening_validation.py` | Identify who are the "urban poor" (screening tool validation) | **Prerequisite for RO1** |
+| `likert_reliability.py` | Measure digital inclusion perception (barriers + competencies) | **RO1, RO2, RO3** |
+| `interview_wordcloud.py` | Extract keywords from interview transcripts | **Qualitative support for RO1-RO3** |
+| `interview_wordcloud.png` | Word cloud: 手机、功能、子女 | **Qualitative evidence** |
+
+---
+
+## 🔗 GitHub Repository
+[https://github.com/Hzx0402/digitalinclusion-pilot](https://github.com/Hzx0402/digitalinclusion-pilot)
