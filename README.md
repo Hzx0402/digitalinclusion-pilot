@@ -9,7 +9,7 @@ This repository documents my Python learning journey for my proposed PhD researc
 
 ## 📊 1. Policy Analysis → Problem Statement
 
-Using Python to analyze Guangzhou's urban regeneration and smart community policies across three Five-Year Plan periods (13th–15th), I found:
+Using Python to analyze Guangzhou's urban renewal and smart community policies across three Five-Year Plan periods (13th–15th), I found:
 
 | Keyword Category | 13th FYP | 14th FYP | 15th FYP | Change |
 | :--- | :--- | :--- | :--- | :--- |
@@ -34,30 +34,74 @@ Using Python to analyze Guangzhou's urban regeneration and smart community polic
 
 ## 🛠 3. Research Design
 
-### Quantitative: Survey
+### 3.1 Quantitative: Survey
 
 | Tool | What it does | Validation | Code |
 | :--- | :--- | :--- | :--- |
-| **Poverty Screening** | Identify urban poor groups (4 dimensions: economy, migration, physiology, education) | Logistic regression + Chi-square + 100% accuracy | `poverty_screening_validation.py` |
-| **Likert Scale** | Measure digital inclusion perception (7 items: barriers + competencies) | Cronbach's α = 0.78 / 0.90 | `likert_reliability.py` |
+| **Poverty Screening** | Identify urban poor (6 dimensions) | KR-20 + Expert Review + Theory Alignment | `poverty_screening_validation.py` |
+| **Likert Scales** | Measure barriers and competencies | Cronbach's α | `likert_reliability.py` |
 
-### Qualitative: Interview
+#### 3.2 Qualitative: Interview
 
 | Tool | What it does | Code |
 | :--- | :--- | :--- |
-| **Word Cloud** | Extract keywords from interview transcripts (THULAC segmentation) | `interview_wordcloud.py` |
+| **Word Cloud** | Extract keywords from interview transcripts | `interview_wordcloud.py` |
+
+---
+
+## 📋 4. Poverty Screening Table Validation
+
+### 4.1 Six Dimensions
+
+| Dimension | Source | Measurement |
+| :--- | :--- | :--- |
+| Income | MPI (UNDP) | Below 1300 RMB/month |
+| Education | MPI (UNDP) | High school or below |
+| Health | MPI (UNDP) | Age ≥60 or disability |
+| Living Standard | MPI (UNDP) | Crowded housing or lack of facilities |
+| Digital Skills | Digital Inclusion Literature | Cannot use smartphone independently |
+| Non-Guangzhou Hukou | Urban-rural disparity research | Hukou not in Guangzhou |
+
+**Poverty Rule**: ≥2 out of 6 dimensions → classified as urban poor.
+
+### 4.2 Validation Methods
+
+| Method | Result | Interpretation |
+| :--- | :--- | :--- |
+| **KR-20** (Internal consistency) | 0.125 | Low but acceptable for multidimensional poverty index |
+| **Expert Review** (Content validity) | 2-3 experts agreed | Dimensions cover urban poverty characteristics |
+| **Theory Alignment** (Construct validity) | Matches UNDP MPI + literature | Each dimension has academic support |
+
+**Conclusion**: The poverty screening table is valid for identifying urban poor in Guangzhou's smart regeneration context.
+
+---
+
+## 📊 5. Likert Scale Reliability Test
+
+Two independent Likert scales (1-5 points):
+
+| Scale | Items | Cronbach's α | Grade |
+| :--- | :--- | :--- | :--- |
+| **Digital Barriers** (RO1) | 3 items | 0.782 | ✅ Good |
+| **Digital Competencies** (RO2/RO3) | 4 items | 0.897 | ✅ Good |
+
+![Likert Scale Reliability](likert_reliability.png)
+
+**Conclusion**: Both scales have good internal consistency and reliably measure digital inclusion perception.
 
 ---
 
 ## 📂 Repository Files
 
-| File | What it does | Which RO it supports |
-| :--- | :--- | :--- |
-| `policy_analysis.py` | Policy trend analysis (identify the problem) | Background |
-| `poverty_screening_validation.py` | Identify who are the "urban poor" (screening tool validation) | **Prerequisite for RO1** |
-| `likert_reliability.py` | Measure digital inclusion perception (barriers + competencies) | **RO1, RO2, RO3** |
-| `interview_wordcloud.py` | Extract keywords from interview transcripts | **Qualitative support for RO1-RO3** |
-| `interview_wordcloud.png` | Word cloud: 手机、功能、子女 | **Qualitative evidence** |
+| File | Role |
+| :--- | :--- |
+| `poverty_screening_validation.py` | KR-20 validation |
+| `likert_reliability.py` | Likert scale reliability |
+| `likert_reliability.png` | Reliability chart |
+| `policy_analysis.py` | Policy trend analysis |
+| `policy_trend_chart.png` | Trend chart |
+| `interview_wordcloud.py` | Interview word cloud |
+| `interview_wordcloud.png` | Word cloud image |
 
 ---
 
