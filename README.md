@@ -3,7 +3,7 @@
 ## 📌 Research Topic
 **Digital Inclusion, Social Equity, and the Governance of the Urban Poor in Guangzhou's Smart City-Driven Regeneration**
 
-This repository documents my Python learning journey for my proposed PhD research under **Prof. Xiang Lv** at HKUST(GZ).
+This repository documents my Python learning journey for my proposed PhD research
 
 ---
 
